@@ -1,0 +1,72 @@
+'number' + 3 + 3// = 'number33'
+Since the number is a string, the string 'number', the number 3 and the number 3 will be concatenated.
+
+null + 3// = 3
+In this expression, null is converted to a number because you use the addition operator + with a number. null is converted to 0 because JavaScript converts null to 0 when used with arithmetic operators.
+
+5 && "qwerty"// = "qwerty"
+The result is because 5 and "qwerty" are both true values (not zero and not empty).
+
++'40' + +'2' + "hillel"// = "42hillel"
+'40 'becomes a number because it is preceded by a unary plus (+). The result of this operation will be the number 40.
+'2' is also converted to a number because it is preceded by a unary plus (+). The result of this operation will be the number 2.
+After that, the operation of adding numbers occurs: 40 + 2 = 42.
+Next, the resulting number and the string "hillel" are concatenated
+
+'10' - 5 === 6// =  false
+'10' - 5 first a subtraction operation occurs. The string '10' is automatically converted to a number because you subtract the number 5 from it. The result of this operation will be the number 5.
+The result of the previous operation (5) is compared with the number 6 using the strict comparison operator = = =. This operator checks if both operands are equal in value and data type. In this case, 5 is not equal to 6, so this operation will return false.
+
+true + false// = 1
+The expression true + false in JavaScript will be 1 + 0, since the logical value true in JavaScript is converted to the number 1, and the logical value false is converted to the number 0 in arithmetic operations. Thus, the result of the expression will be 1.
+
+'4px' - 3// = NaN
+Subtract the number 3 from the string '4px'. Since the string '4px' cannot be converted to a number directly, JavaScript will try to convert the string to a number, and if this is not possible, the result will be NaN.
+
+'4' - 3// = 1
+In this case, the string '4' is converted to a number because you subtract the number 3 from the string, which looks like a number. Therefore, the result will be a numerical operation 4-3 equal to 1.
+
+'6' + 3 ** 0// ='7' 
+The ** operator in JavaScript raises a number to a power. Therefore, 3 ** 0 is equal to 1, since any number raised to the zero power will always be 1. Thus, the expression '6' + 3 * * 0 will turn the string '6' into the number 6 (since there is a numeric value next to the operator +), and then perform the operation of adding the number 6 and the number 1. The result is the number 7, which is automatically converted to a string because you use the + operator for strings.
+
+12 / '6'// = 2
+The number 12 is divided by a number that is automatically converted from the string '6' to the number 6.
+
+'10' + (5 === 6)// = '10false'
+In this expression, a comparison operation of 5 === 6 will occur first, which will return a Boolean value false since 5 is not equal to 6. This is followed by a string concatenation operation because one of the operands is a string. Thus, the result will be the string '10false', where false was converted to a string for concatenation.
+
+null == ''// = true
+In JavaScript, the == operator compares two values with the consideration of type reduction. In the expression null == '' null and '' belong to different data types: null is a special value that indicates no value, and ''(empty string) is a string value. Therefore, null is first converted to a number (if required) or ''to a number (if required) before comparison. In the case of null == '' null is converted to 0, and '' to 0, since an empty string is converted to 0 when compared with numbers. Therefore, the expression null == '' will be true.
+
+3 ** (9 / 3)// = 27
+In this expression, a division operation of 9/3 equal to 3 is performed first. Then the operation of raising to the power of 3 * * 3, equal to 27, is performed.
+
+!!'false' == !!'true'// = true
+This expression checks if both Boolean values 'false' and 'true' can be converted to true.
+!!'false' - double application of the operator ! converts the string 'false' to a boolean value of false and then back to true. That is, !!'false' becomes true.
+!!'true' - double application of the operator ! converts the string 'true' to a boolean value of false and then to true again. That is, !! 'true' becomes true.
+So !!'false' == !!'true' is a true expression because both values can be converted to true.
+
+0 || '0' && 1// = 1
+When evaluating this expression, the & & (logical AND) operation is performed first.
+'0' is converted to true because it is not an empty string. This is followed by an & & operation between '0' (which is true) and 1, which results in 1.
+Thus, the expression is simplified to 0 | | 1, where:
+0 is converted to false
+1 becomes true.
+In operation || (logical "OR"), the result is the first operand that is true, or the last if all operands are false. So the result of the expression 0 || '0' && 1 is 1.
+
+(+null == false) < 1// = false
++ null converts null to a number, so the result of this operation will be 0.
+0 = = false-The = = = operator compares values based on type reduction. In this case, both values can be reduced to a number, and 0 and false are converted to 0. Thus, this operation will be true.
+Compare true < 1-The < operator compares numbers. Convert true to 1 and get 1 < 1, which is a false operation.
+
+false && true || true// = true
+false && true - The && operator returns the first value if it is false, otherwise it returns the second value. In this case, the result is false, since one of the operands (false) is false.
+Further, the expression false || true - the operator || returns the first value if it is converted to true, otherwise returns the second value. In this case, the result is true because one of the operands (true) is true.
+
+false && (false || true)// = false
+First, an operation is performed inside the brackets, that is, false | | true, which returns true, since one of the operands is true.
+Then a logical AND (& &) operation is performed between false and the result of the operation inside parentheses (true). The & & & operator will return false because one of the operands is false.
+
+(+null == false) < 1 ** 5// = true
++ null converts null to a number, the result is 0. 0 == false is compared, which is true because both values are converted to 0. The comparison operator < compares the result of the previous comparison with 1 * * 5, which is 1. The expression 0 < 1 is also true.
