@@ -41,28 +41,42 @@ const company = {
     ]
 };
 
-function findValueByKey(companyName, company) {
-    if (company.name === companyName) {
-        return company;
+function findValueByKey(companyName, obj = company) {
+   
+    if (obj.name === companyName) {
+        
+        return {
+            name: obj.name,
+            type: obj.type,
+            uses: obj.uses,
+            sells: obj.sells
+        };
     }
-
-    if (company.clients) {
-        for (let client of company.clients) {
+    
+    
+    if (obj.clients) {
+        for (const client of obj.clients) {
             const result = findValueByKey(companyName, client);
             if (result) {
                 return result;
             }
         }
     }
-
+    
+    
+    if (obj.partners) {
+        for (const partner of obj.partners) {
+            const result = findValueByKey(companyName, partner);
+            if (result) {
+                return result;
+            }
+        }
+    }
+    
+    
     return null;
 }
 
-const companyName = 'Клієнт 2';
-const result = findValueByKey(companyName, company);
 
-if (result) {
-    console.log('Знайдено компанію:', result.name);
-} else {
-    console.log('Компанію з такою назвою не знайдено.');
-}
+const foundCompany = findValueByKey('Клієнт 1.2');
+console.log(foundCompany);
